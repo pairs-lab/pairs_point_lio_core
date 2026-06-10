@@ -1,0 +1,26 @@
+<launch>
+
+  <arg name="UAV_NAME" default="$(env UAV_NAME)" />
+
+  <arg name="livox_config" default="$(find livox_ros_driver2)/config/MID360_config.json" />
+
+  <arg name="livox_frame" default="$(arg UAV_NAME)/livox_frame" />
+  <arg name="odom_frame"  default="$(arg UAV_NAME)/point_lio_odom" />
+
+  <arg name="livox_frame_slashless" default="livox_$(arg UAV_NAME)" />
+  <arg name="odom_frame_slashless"  default="odom_$(arg UAV_NAME)" />
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="$(arg odom_frame_slashless)_to_$(arg livox_frame_slashless)" args=" 0 0 0 0 0 0 $(arg odom_frame) $(arg livox_frame)" />
+
+  <include file="$(find livox_ros_driver2)/launch/mid360.launch">
+    <arg name="config" value="$(arg livox_config)" />
+    <arg name="xfer_format" value="1" />
+  </include>
+
+  <include file="$(find point_lio)/launch/mid360.launch">
+    <arg name="rviz" value="false" />
+  </include>
+
+  <include file="$(find livox_ros_driver2)/launch/pcl_livox_to_ros.launch" />
+
+</launch>

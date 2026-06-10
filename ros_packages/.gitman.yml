@@ -1,0 +1,35 @@
+location: .gitman
+sources:
+  - repo: https://github.com/ctu-mrs/Point-LIO
+    name: Point-LIO
+    rev: master
+    type: git
+    sparse_paths:
+      -
+    links:
+      - source: ''
+        target: point_lio
+    scripts:
+      - git submodule update --init --recursive
+  - repo: https://github.com/pairs-lab/pairs_point_lio_estimator_plugin
+    name: pairs_point_lio_estimator_plugin
+    rev: ros1
+    type: git
+    sparse_paths:
+      -
+    links:
+      - source: ''
+        target: pairs_point_lio_estimator_plugin
+    scripts:
+      - git submodule update --init --recursive
+  - repo: https://github.com/ctu-mrs/livox_ros_driver2
+    name: livox_ros_driver2
+    rev: master
+    type: git
+    sparse_paths:
+      -
+    links:
+      - source: ''
+        target: livox_ros_driver2
+    scripts:
+      - git submodule update --init --recursive
