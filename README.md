@@ -1,7 +1,6 @@
 # pairs_point_lio_core
 
-**PAIRS Point-LIO core** metapackage — a faithful rename-port of the CTU-MRS
-`pairs_point_lio_core`. Runs the PAIRS UAV system with Point-LIO LiDAR-inertial
+**PAIRS Point-LIO core** metapackage. Runs the PAIRS UAV system with Point-LIO LiDAR-inertial
 state estimation (launch / config / rviz / tmux for several LiDAR rigs).
 
 The LiDAR-odometry backend `point_lio` (HKU Point-LIO, CTU fork; bundles the
@@ -17,4 +16,4 @@ Component repositories are managed via `ros_packages/.gitman.yml` (`gitman insta
 
 ## License
 BSD 3-Clause. Derived from the CTU-MRS `pairs_point_lio_core`; original copyright
-retained in [LICENSE](LICENSE). Maintainer: Thanh Nguyen Canh <canhthanh@vnu.edu.vn>
+retained in [LICENSE](LICENSE).
